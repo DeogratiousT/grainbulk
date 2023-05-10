@@ -23,14 +23,20 @@ export default function Home() {
     console.log(register.json());
     const registerRes = await register.json();
     
-    if (true) {
-      if (true) {
+    if (registerRes.status == "200") {
+      if (registerRes.result == "success") {
         code = registerRes.code;
         message = await readMessage();
         console.log(message);
+
+        alert(message)
       } else {
         error = registerRes.result;
+        alert(error)
       }      
+    }else {
+      error = registerRes.message;
+      alert(error)
     }
 
   }
@@ -48,12 +54,16 @@ export default function Home() {
 
     const readRes = await read.json()
     
-    if (true) {
-      if (true) {
-        return await readRes;
+    if (readRes.status == "200") {
+      if (readRes.result == "success") {
+        return await readRes.message
       } else {
-        error = readRes.result;
+        error = readRes.result
+        alert(error)
       }      
+    }else{
+      error = readRes.message
+      alert(error)
     }
 
   }
