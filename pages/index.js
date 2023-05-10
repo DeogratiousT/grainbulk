@@ -42,7 +42,7 @@ export default function Home() {
   }
 
   const readMessage = async (code) => {
-    const read = await fetch('http://3.123.16.12/web/api/code',{
+    const read = await fetch('http://52.59.33.40/web/api/code',{
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
